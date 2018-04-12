@@ -1,0 +1,208 @@
+/*BASE SETTINGS start*/
+html
+  line-height: 1
+  font-size: 14px
+
+h1
+h2
+h3
+h4
+h5
+h6
+  margin: 0
+
+ul
+li
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+p
+  margin: 0
+
+a
+  text-decoration: none
+  color: black
+
+textarea
+  resize: none
+
+section
+  position: relative
+  margin-bottom: 20px
+
+input
+select
+button
+  outline: none
+
+*
+*:before
+*:after
+  box-sizing: border-box
+  margin: 0
+
+body
+  font-family:'Open Sans', sans-serif
+
+.container
+  display: flex
+  margin: 0 auto
+  width: 100%
+  max-width: 1024px
+  flex-direction: column
+
+/*BASE SETTINGS end*/
+
+
+/*VARIABLES*/
+/*Colors*/
+grey-light = #DDDDDD
+grey-dark = #7f7f7b
+main-bg-color = #DDDDDD
+border-color = #fff
+visible-bg-color = #FFE0F8
+footer-bg-color = #000
+button-bg-color = #90EE90
+
+text-white = #fff
+
+
+
+/*HEADER BEGIN*/
+.header
+  position: fixed
+  width: 100%
+  top: 0
+  z-index: 5
+
+.header_nav
+  display: flex
+  height: 40px
+  width: 100%
+  justify-content: space-around
+  align-items: center
+  background: main-bg-color
+  border: 1px solid border-color
+
+.btn
+  padding: 7px
+  cursor: pointer
+  background: linear-gradient(button-bg-color 100%, text-white 0%)
+  border: 1px solid border-color
+  border-radius: 5px
+  &:hover
+    color: text-white
+
+.active
+  background: linear-gradient(rgb(171,27,27) 0%, rgb(212,51,51) 100%)
+  color: text-white
+
+/*HEADER END*/
+
+/*MAIN CONTENT start*/
+.aside_blocks
+  position: relative
+  min-height: calc(100vh - 40px)
+  overflow: hidden
+
+.aside
+  display: flex
+  position: absolute
+  width: 300px
+  padding: 10px
+  top: 0
+  bottom: 0
+  align-items: center
+  color: grey-light
+  background: grey-dark
+  border: 1px dashed border-color
+  z-index: 3
+  -webkit-transition: linear .5s
+  -moz-transition: linear .5s
+  -ms-transition: linear .5s
+  -o-transition: linear .5s
+  transition: linear .5s
+
+.aside-left
+  left: -100%
+
+.aside-right
+  right: -100%
+
+.main_content
+  display: flex
+  position: relative
+  margin-top: 40px
+  flex-direction: column
+  background: main-bg-color
+  border: 1px solid border-color
+  border-top: none
+
+.page_description
+  display: flex
+  margin: 10px 10px 0 10px
+  padding: 10px
+  height: 100px
+  line-height: 2
+  background: main-bg-color
+  border: 1px solid border-color
+  overflow: hidden
+
+.content-wrapper
+  display: flex
+  position: relative
+  width: 100%
+
+.content
+  display: flex
+  flex-direction: column
+  margin: 10px 0 10px 10px
+  -ms-flex: 1 1 50%
+  flex: 1 1 calc(100% - 240px)
+  p
+    margin-bottom: 10px
+    line-height: 1.5
+
+.content_title
+  font-weight: bold
+
+.always_visible
+  display: flex
+  position: -webkit-sticky
+  position: sticky
+  margin: 10px
+  padding: 10px
+  width: 200px
+  height: 70vh
+  top: 40px
+  order: 2
+  align-items: center
+  background: visible-bg-color
+
+/*MAIN CONTENT end*/
+
+/*FOOTER BEGIN*/
+.footer
+  padding: 10px
+  min-height: 30px
+  flex: 0 0 auto
+  color: grey-light
+  background: footer-bg-color
+
+
+/*FOOTER END*/
+@media screen and (max-width 450px)
+  .always_visible
+    width: 100px
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+  .always_visible {
+    position: fixed
+    top: 150px
+    right: 120px
+  }
+  .content p{
+    width: 75%
+  }
+}
